@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Vibrating Stripes</title>
+  <link rel="stylesheet" href="app.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://use.typekit.net/uoo5gyw.js">
+  </script>
+
+</head>
+<body>
+
+<div id="status-message" class="hidden"></div>
+
+<svg viewBox="0 0 800 800" width="1000" height="1000">
+  <mask id="stripe-mask">
+  </mask>
+
+  <text x="400" y="200" mask="url(#stripe-mask)">GONE</text>
+</svg>
+
+<button id="step-button">Step</button>
+<button id="clear-seed-button">Clear seed</button>
+<!--
+<script src="index.js"></script>
+-->
+
+<script>
+var stripeMask = document.getElementById('stripe-mask');
+for (var i = 0; i < 200; ++i) {
+  let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', 0);
+  rect.setAttribute('y', i * 2);
+  rect.setAttribute('width', 1000);
+  rect.setAttribute('height', 1);
+  rect.setAttribute('fill', 'white');
+  stripeMask.appendChild(rect);
+}
+</script>
+  
+</body>
+</html>
